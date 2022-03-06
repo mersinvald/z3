@@ -387,7 +387,7 @@ class PairManager(object):
                         z_snap.parent.name, z_snap.name),
                     capture=True))
             self._cmd.pipe(
-                "zfs send -i '{}' '{}'".format(
+                "zfs send -w -i '{}' '{}'".format(
                     z_snap.parent.name, z_snap.name),
                 self._compress(
                     self._pput_cmd(
